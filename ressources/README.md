@@ -1,29 +1,80 @@
-# noname - 
+# thingy-debug 
 
-# Why?
+# Background
+While debugging via console.log too much and always commenting out and uncommenting it again the desire for making this process faster arose.
 
-# What?
+However by far not not optimal yet this is the next iteration.
 
-# How?
-Requirements
-------------
+Now we import the `log` and `olog` function for debugging a specific module.
+
+- `log` is basically a named `console.log` like `console.log("[modulename]: real log stuff")`
+- `olog` is for object logging and does the `JSON.stringify(obj, null 4)` before
+
+By default the functions will do nothing. As debugging is switched off unless switched on.
+
+We may enable a batch of modules to be debugged at once.
+Or we switch on/off one specific module.
+
+# Usage
 
 Installation
 ------------
-
-
-Usage
------
-
+Current git version
+``` sh
+$ npm install git+https://github.com/JhonnyJason/thingy-debug.git
+```
+Npm Registry
+``` sh
+$ npm install thingy-debug
+```
 
 Current Functionality
 ---------------------
+For using in the specific module.
+```coffee
+import { createLogFunctions } from "thingy-debug"
+{log, olog} = createLogFunctions("myModule")
+
+
+someFunction = (obj) ->
+    log "someFunction called"
+    olog {obj}
+    return obj.content
+
+```
+
+Batch enabling debugging
+```coffee
+import { addModulesToDebug } from "thingy-debug"
+
+modulesToDebug = 
+    myModule:true
+    someOtherModule: false
+    # nextModule: true
+
+addModulesToDebug(modulesToDebug)
+
+
+```
+
+Single Enabling/Disabling
+
+```coffee
+import { debugOn, debugOff } from "thingy-debug"
+
+debugOn("myModule")
+debugOff("myModule")
+
+```
 
 
 ---
 
+
 # Further steps
 
+- fix bugs
+- work on next better way of debugging
 - ...
 
 

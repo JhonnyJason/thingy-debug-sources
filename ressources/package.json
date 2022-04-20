@@ -1,7 +1,7 @@
 {
   "name": "thingy-debug",
   "version": "0.0.1",
-  "description": "",
+  "description": "Small convenience package to easily switch on and of debugging, also at runtime.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,12 +11,12 @@
   "license": "Unlicense",
   "repository": {
     "type": "git",
-    "url": "git+https://.git"
+    "url": "git+https://github.com/JhonnyJason/thingy-debug.git"
   },
   "bugs": {
-    "url": "https://"
+    "url": "https://github.com/JhonnyJason/thingy-debug/issues"
   },
-  "homepage": "https://",
+  "homepage": "https://github.com/JhonnyJason/thingy-debug-output#readme",
   "dependencies": {},
   "type": "module"
 }
